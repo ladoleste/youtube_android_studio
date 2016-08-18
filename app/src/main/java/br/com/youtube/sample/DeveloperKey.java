@@ -11,5 +11,6 @@ public class DeveloperKey {
      * <a href="https://console.developers.google.com/">Google Developers Console</a>
      * to register a new developer key.
      */
-    public static final String DEVELOPER_KEY = "[INSERT YOUR KEY HERE]";
+    public static final String DEVELOPER_KEY = BuildConfig.MY_API_KEY;
+    //public static final String DEVELOPER_KEY = "INSERT YOUR KEY HERE";
 }
