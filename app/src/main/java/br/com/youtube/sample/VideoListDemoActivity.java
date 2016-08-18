@@ -124,8 +124,7 @@ public final class VideoListDemoActivity extends Activity implements OnFullscree
     }
 
     private void checkYouTubeApi() {
-        YouTubeInitializationResult errorReason =
-                YouTubeApiServiceUtil.isYouTubeApiServiceAvailable(this);
+        YouTubeInitializationResult errorReason = YouTubeApiServiceUtil.isYouTubeApiServiceAvailable(this);
         if (errorReason.isUserRecoverableError()) {
             errorReason.getErrorDialog(this, RECOVERY_DIALOG_REQUEST).show();
         } else if (errorReason != YouTubeInitializationResult.SUCCESS) {

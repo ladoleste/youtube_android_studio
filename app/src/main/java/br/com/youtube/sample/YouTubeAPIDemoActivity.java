@@ -21,6 +21,7 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -79,7 +80,7 @@ public class YouTubeAPIDemoActivity extends Activity implements OnItemClickListe
         listView.setOnItemClickListener(this);
 
         TextView disabledText = (TextView) findViewById(R.id.some_demos_disabled_text);
-        disabledText.setText(getString(R.string.some_demos_disabled, android.os.Build.VERSION.SDK_INT));
+        disabledText.setText(getString(R.string.some_demos_disabled, String.valueOf(Build.VERSION.SDK_INT)));
 
         if (adapter.anyDisabled()) {
             disabledText.setVisibility(View.VISIBLE);
@@ -117,7 +118,7 @@ public class YouTubeAPIDemoActivity extends Activity implements OnItemClickListe
         @Override
         public String getDisabledText() {
             String itemDisabledText = getString(R.string.list_item_disabled);
-            return String.format(itemDisabledText, minVersion);
+            return String.format(itemDisabledText, String.valueOf(minVersion));
         }
 
         @Override
