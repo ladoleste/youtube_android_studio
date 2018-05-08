@@ -1,34 +1,28 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.1"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
     defaultConfig {
         applicationId "br.com.youtube.sample"
-        minSdkVersion 13
-        targetSdkVersion 24
+        minSdkVersion 21
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        jackOptions { enabled true }
+
+        buildConfigField 'String', 'MY_API_KEY', '"xAIzaSyAiQh1MyeUbsxui2RwmdgIsUQ5hh9PXpck"'
     }
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField 'String', 'MY_API_KEY', MY_API_KEY
         }
         debug {
-            minifyEnabled false
-            buildConfigField 'String', 'MY_API_KEY', MY_API_KEY
         }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 }
